@@ -12,21 +12,25 @@
 @class TourTabBarController;
 //@class Camera;
 
+// parent view controller for beginning new tour functionality
 @interface NewTourViewController : UIViewController <UIAlertViewDelegate> {
 	UITextField* entry;
 	UISegmentedControl *weatherCont;
 	NSManagedObjectContext *context;
 	UIButton *keyboard;
 	UIButton * info;
+	// alerts
 	UIAlertView *details;
 	UIAlertView *checkEnd;
+	// nav controllers
 	TourTabBarController *ttbc;
 	UITabBarController *tbc;
 	College *college;
 	UIBarButtonItem *lbi;
 }
 
--(IBAction) makeCollege;
+// methods
+-(IBAction) makeCollege; // create new college
 -(IBAction) hideKeyBoard: (id) sender;
 -(IBAction) showInfo:(UIButton *) info;
 

@@ -27,6 +27,7 @@
 }
 
 - (void)saveContext {
+	// save current app context that is passed through app
     NSError *error = nil;
     if (context != nil) {
         if ([context hasChanges] && ![context save:&error]) {
@@ -74,12 +75,14 @@
 																			 target:self 
 																			 action:@selector(saveAndEnd)];
 		
+		// combine view controllers into array
 		NSArray *vc = [[NSArray alloc] initWithObjects:rv, et, idc, nil];
 		tbc.viewControllers = vc;
 		tbc.title = college.name;
 		tbc.navigationItem.leftBarButtonItem = lbi;
 		[self.navigationController pushViewController:tbc animated:YES];
 		
+		// memory managment
 
 		[idc release];
 		[rv release];
@@ -91,6 +94,9 @@
 }
 
 -(void) saveAndEnd {
+	/*
+		end tour checks to make sure the user wants to finish their tour
+	*/
 	NSString *msg = @"Are you sure you are ready to end your tour";
 	checkEnd = [[UIAlertView alloc] initWithTitle:@"Done?" message:msg delegate:self cancelButtonTitle:@"Yes" otherButtonTitles:@"No",nil];
 	[checkEnd show];	
@@ -120,6 +126,7 @@
 }
 
 -(IBAction) showInfo:(UIButton *) info {
+	// display instructions
 	NSString *msg = @"This is where you can start your tour. Enter the college you are visiting in the text field above. Next just select what the weather is like and you'll be on your way. The date will be recorded for you automatically";
 	details = [[UIAlertView alloc] initWithTitle:@"Whats going on?" message:msg delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
 	[details show];
