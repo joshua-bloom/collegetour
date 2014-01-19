@@ -13,7 +13,7 @@
 @implementation VisitedTableViewController
 @synthesize cxt, sorter;
 
-
+// load context and handle sorting logic
 -(id)initInManagedObjectContext:(NSManagedObjectContext *)context {
 	self.tableView.delegate = self;
 	sortChoice = 0;
@@ -64,6 +64,7 @@
 }
 
 - (void)managedObjectSelected:(NSManagedObject *)managedObject {
+	// which object has been selected?
 	col = (College*) managedObject;
 	CollegeDetailViewController* cdvc = [[CollegeDetailViewController alloc] initWithCollege:col];
 	cdvc.title = col.name;
@@ -74,6 +75,7 @@
 }
 
 -(void) changeSort:(int) newSortChoice  {	
+	// manipulate sort options via NSFetchRequest
 	sortChoice = newSortChoice;
 	choiceCount++;
 	NSFetchRequest *request = [[NSFetchRequest alloc] init];

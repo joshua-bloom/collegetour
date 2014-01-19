@@ -11,6 +11,7 @@
 
 @class College;
 
+// summary view of a college that has already been evaluated
 @protocol VisitedViewDelegate
 - (int)sortValueForControl;
 @end
