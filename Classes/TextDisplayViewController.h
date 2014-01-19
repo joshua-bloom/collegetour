@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 @class College;
 
+// view controller for final thoughts text view
 @interface TextDisplayViewController : UIViewController {
 	College *col;
 	UITextView *tv;
