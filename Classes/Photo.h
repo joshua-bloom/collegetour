@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Three20/Three20.h"
 
+// class to wrap photo details
 @interface Photo : NSObject <TTPhoto> {
     NSString *_caption;
     NSString *_urlLarge;
