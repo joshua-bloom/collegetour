@@ -6,9 +6,11 @@
 //  Copyright 2011 College Visions. All rights reserved.
 //
 
+
 #import <UIKit/UIKit.h>
 #import "SettingsTableViewController.h"
 
+// view controller for the settings logic
 @interface SettingsTableViewController : UITableViewController  {
 	NSArray *objs;
 	NSMutableDictionary *dic;

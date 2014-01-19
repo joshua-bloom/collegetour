@@ -18,12 +18,14 @@
 - (id)init {
 	if (self = [super init]) {
 		self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStyleGrouped];
+		// declare preference options
 		objs = [[NSArray alloc] initWithObjects:@"Academics",@"Athletics",@"Dorms",@"Food",@"Campus",@"Town",@"Social",nil];
 		dic =[[NSMutableDictionary alloc]init];
 		NSUserDefaults *currentDefaults = [NSUserDefaults standardUserDefaults];
 		NSData *dataRepresentingSavedArray = [currentDefaults objectForKey:@"savedArray"];
 		if (dataRepresentingSavedArray != nil) {
 			NSArray *oldSavedArray = [NSKeyedUnarchiver unarchiveObjectWithData:dataRepresentingSavedArray];
+			// concert to binary
 			if (oldSavedArray != nil) {
                 bin = [[NSMutableArray alloc] initWithArray:oldSavedArray];
 			}
@@ -116,6 +118,7 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
+    // show checkmark if data == 1
 	if (indexPath.section == 0 && indexPath.row !=7) {
 		cell.textLabel.text = [self.objs objectAtIndex:indexPath.row];
 		if ([[bin objectAtIndex:indexPath.row] isEqualToString:@"1"]) {
@@ -177,6 +180,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.row !=7) {
+		// checkmark logic
 		if ([[bin objectAtIndex:indexPath.row]isEqualToString: @"1"]) {
 			[bin replaceObjectAtIndex:indexPath.row withObject:@"0"]; 
 		}
