@@ -30,13 +30,13 @@
 -(IBAction) hideKeyBoard: (id) sender;
 -(IBAction) showInfo:(UIButton *) info;
 
-@property(nonatomic,retain) IBOutlet UITextField* entry;
-@property(nonatomic,retain) NSManagedObjectContext* context;
-@property (nonatomic,retain) IBOutlet UIAlertView *details, *checkEnd;
-@property(nonatomic,retain) IBOutlet UISegmentedControl* weatherCont;
-@property(nonatomic,retain) IBOutlet UIButton *keyboard,*info;
-@property(nonatomic,retain) TourTabBarController* ttbc;
-@property(nonatomic,retain) College* college;
+@property(nonatomic, retain) IBOutlet UITextField* entry;
+@property(nonatomic, retain) NSManagedObjectContext* context;
+@property (nonatomic, retain) IBOutlet UIAlertView *details, *checkEnd;
+@property(nonatomic, retain) IBOutlet UISegmentedControl* weatherCont;
+@property(nonatomic, retain) IBOutlet UIButton *keyboard,*info;
+@property(nonatomic, retain) TourTabBarController* ttbc;
+@property(nonatomic, retain) College* college;
 
 
 @end

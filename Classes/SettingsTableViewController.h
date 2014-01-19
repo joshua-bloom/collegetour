@@ -17,7 +17,7 @@
 
 -(void)showAlert:(id) sender;
 
-@property(nonatomic,retain) NSArray *objs;
-@property(nonatomic,retain) NSMutableDictionary* dic;
+@property(nonatomic, retain) NSArray *objs;
+@property(nonatomic, retain) NSMutableDictionary* dic;
 
 @end

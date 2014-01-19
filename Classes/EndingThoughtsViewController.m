@@ -11,7 +11,7 @@
 #import "TextViewController.h"
 
 @implementation EndingThoughtsViewController
-@synthesize vibe,tourGuide,notes,col,hide,thoughts,currTime,town;
+@synthesize vibe, tourGuide, notes, col, hide, thoughts, currTime, town;
 
 	//initializer which allows us to pass college and context from previous view
 -(id) initWithCollege:(College*)collegeModel andContext:(NSManagedObjectContext*)context{

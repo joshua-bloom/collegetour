@@ -11,7 +11,7 @@
 #import "EndingThoughtsViewController.h"
 
 @implementation RatingsViewController
-@synthesize dorms,food,athletics,campus,town,social,academics,et;
+@synthesize dorms, food, athletics, campus, town, social, academics, et;
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
@@ -47,19 +47,19 @@
 
 	//manually draws all the star views into the page (MIGHT NEED TO RELEASE THESE IN DEALLOC)
 -(void)createStarViews{
-	dorms = [[DLStarRatingControl alloc] initWithFrame:CGRectMake(110, 10, 200,50) andStars:5];
+	dorms = [[DLStarRatingControl alloc] initWithFrame:CGRectMake(110, 10, 200, 50) andStars:5];
 	dorms.delegate = self;
-	food = [[DLStarRatingControl alloc] initWithFrame:CGRectMake(110, 70, 200,50) andStars:5];
+	food = [[DLStarRatingControl alloc] initWithFrame:CGRectMake(110, 70, 200, 50) andStars:5];
 	food.delegate = self;
-	athletics = [[DLStarRatingControl alloc] initWithFrame:CGRectMake(110, 130, 200,50) andStars:5];
+	athletics = [[DLStarRatingControl alloc] initWithFrame:CGRectMake(110, 130, 200, 50) andStars:5];
 	athletics.delegate = self;
-	campus = [[DLStarRatingControl alloc] initWithFrame:CGRectMake(110, 190, 200,50) andStars:5];
+	campus = [[DLStarRatingControl alloc] initWithFrame:CGRectMake(110, 190, 200, 50) andStars:5];
 	campus.delegate = self;
-	//town = [[DLStarRatingControl alloc] initWithFrame:CGRectMake(110, 250, 200,50) andStars:5];
+	//town = [[DLStarRatingControl alloc] initWithFrame:CGRectMake(110, 250, 200, 50) andStars:5];
 	//town.delegate = self;
-	social = [[DLStarRatingControl alloc] initWithFrame:CGRectMake(110, 310, 200,50) andStars:5];
+	social = [[DLStarRatingControl alloc] initWithFrame:CGRectMake(110, 310, 200, 50) andStars:5];
 	social.delegate = self;
-	academics = [[DLStarRatingControl alloc] initWithFrame:CGRectMake(110, 250, 200,50) andStars:5];
+	academics = [[DLStarRatingControl alloc] initWithFrame:CGRectMake(110, 250, 200, 50) andStars:5];
 	academics.delegate = self;
 }
 

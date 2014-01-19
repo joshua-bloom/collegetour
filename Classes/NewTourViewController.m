@@ -13,8 +13,8 @@
 #import "EndingThoughtsViewController.h"
 
 @implementation NewTourViewController
-@synthesize entry,weatherCont;
-@synthesize keyboard,context,info,details,ttbc,checkEnd,college;
+@synthesize entry, weatherCont;
+@synthesize keyboard, context, info, details, ttbc, checkEnd, college;
 
 
 	//initializes view witht managed context from app delegate
@@ -74,7 +74,7 @@
 																			 target:self 
 																			 action:@selector(saveAndEnd)];
 		
-		NSArray *vc = [[NSArray alloc] initWithObjects:rv,et,idc,nil];
+		NSArray *vc = [[NSArray alloc] initWithObjects:rv, et, idc, nil];
 		tbc.viewControllers = vc;
 		tbc.title = college.name;
 		tbc.navigationItem.leftBarButtonItem = lbi;

@@ -11,7 +11,7 @@
 #import "CollegeDetailViewController.h"
 
 @implementation VisitedTableViewController
-@synthesize cxt,sorter;
+@synthesize cxt, sorter;
 
 
 -(id)initInManagedObjectContext:(NSManagedObjectContext *)context {

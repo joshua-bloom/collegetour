@@ -10,7 +10,7 @@
 #import "CheckboxViewController.h"
 
 @implementation SettingsTableViewController
-@synthesize objs,dic;
+@synthesize objs, dic;
 
 #pragma mark -
 #pragma mark View lifecycle

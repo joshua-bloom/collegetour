@@ -20,8 +20,8 @@
   contextInfo:(void *)contextInfo;
 -(IBAction)takePicture;
 
-@property (nonatomic,retain) IBOutlet UIButton * cameraButton;
-@property (nonatomic,retain) NSMutableDictionary* photoName;
+@property (nonatomic, retain) IBOutlet UIButton * cameraButton;
+@property (nonatomic, retain) NSMutableDictionary* photoName;
 
 
 @end

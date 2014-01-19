@@ -9,7 +9,7 @@
 #import "ItemDetailController.h"
 
 @implementation ItemDetailController
-@synthesize cameraButton,photoName;
+@synthesize cameraButton, photoName;
 
 -(id) init {
 	if (self = [super init]) {

@@ -27,9 +27,9 @@
 - (id)initWithFrame:(CGRect)frame;
 - (id)initWithFrame:(CGRect)frame andStars:(int)_numberOfStars;
 
-@property (retain,nonatomic) UIImage *star;
-@property (retain,nonatomic) UIImage *highlightedStar;
+@property (retain, nonatomic) UIImage *star;
+@property (retain, nonatomic) UIImage *highlightedStar;
 @property (nonatomic) int rating;
-@property (retain,nonatomic) id<DLStarRatingDelegate> delegate;
+@property (retain, nonatomic) id<DLStarRatingDelegate> delegate;
 
 @end

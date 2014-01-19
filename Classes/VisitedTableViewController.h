@@ -26,7 +26,7 @@
 -(void) changeSort:(int)newSortChoice;
 - initInManagedObjectContext:(NSManagedObjectContext *)context;
 
-@property(nonatomic,retain) NSManagedObjectContext *cxt;
-@property(nonatomic,retain) UIBarButtonItem*sorter;
+@property(nonatomic, retain) NSManagedObjectContext *cxt;
+@property(nonatomic, retain) UIBarButtonItem*sorter;
 
 @end

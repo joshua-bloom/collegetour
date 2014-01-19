@@ -10,7 +10,7 @@
 #import "Reachability.h"
 
 @implementation CollegeWebViewController
-@synthesize webView,webUrl,activity;
+@synthesize webView, webUrl, activity;
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
@@ -56,6 +56,7 @@
 		[noInternet release];
 	}
 	else {
+		// show the url
 		NSString *urlAddress = webUrl;
 		NSURL *url = [NSURL URLWithString:urlAddress];						//Create a URL object.
 		NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];		//URL Requst Object

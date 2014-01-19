@@ -19,6 +19,7 @@
 #pragma mark View lifecycle
 
 -(id) initWithCollege:(College*) collegeModel {
+	// overide init method to take an argument <College>
 	if (self =[self initWithNibName:nil bundle:nil]) {
 		col = collegeModel;
 		[self makeKeyArray];
@@ -31,6 +32,7 @@
 }
 
 -(void) makeKeyArray {
+	// transfer college information into self.keys and sort them
 	keys = [[NSArray alloc] init];
 	[col.dic removeObjectForKey:@"Weather"];
 	self.keys = [col.dic allKeys];
@@ -38,6 +40,7 @@
 }
 
 -(void) overviewArray {
+	// build college overview information and store in array
 	NSString *w;
 	NSDateFormatter *format = [[NSDateFormatter alloc] init];
 	[format setDateFormat:@"MMM dd, yyyy HH:mm"];
@@ -52,7 +55,7 @@
 		w = @"Weather: Good";
 	}
 	int rawScore = [self calculateTotal];
-	overView = [[NSArray alloc] initWithObjects:col.name,datString,w,[NSString stringWithFormat:@"Overall Rating = %.2f",[col.rating floatValue]],[NSString stringWithFormat:@"Raw Score = %d/41",rawScore],nil];
+	overView = [[NSArray alloc] initWithObjects:col.name, datString, w,[NSString stringWithFormat:@"Overall Rating = %.2f",[col.rating floatValue]],[NSString stringWithFormat:@"Raw Score = %d/41",rawScore],nil];
 	[format release];
 }
 
@@ -124,6 +127,9 @@
 
 	// Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	/*
+		Bruitforce custimization of each cell in the table
+	*/
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -320,6 +326,7 @@
 }
 
 -(int) calculateTotal {
+	// helper function to accumulate the score for all keys
 	int rawScore = 0;
 	for (int i=0;i<self.keys.count;i++) {
 		rawScore+=[[col.dic objectForKey:[keys objectAtIndex:i]]intValue];
@@ -328,6 +335,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+	/*
+		add accesory button action  
+	*/
 	if (indexPath.section == 1 && indexPath.row == 4 ) {
 		tvc = [[TextDisplayViewController alloc] initWithCollege:col];
 		[self.navigationController pushViewController:tvc animated:YES];
@@ -344,12 +354,16 @@
 }
 
 -(NSString *) emailString {
+	/*
+		helper function to build the email string from the college that populates email body
+	*/
+
 	int rawScore = [self calculateTotal];
 	float rating = [col.rating floatValue];
 	NSDateFormatter *format = [[NSDateFormatter alloc] init];
 	[format setDateFormat:@"MMM dd, yyyy HH:mm"];
 	NSString *datString = [format stringFromDate:col.dat];
-	NSString *tmp = [NSString stringWithFormat:@"Overview: \n\n College: %@\nRating = %.2f\n Raw Score = %d / 41\n Date: %@\n\nRatings:\n\n",col.name,rating,rawScore,datString];
+	NSString *tmp = [NSString stringWithFormat:@"Overview: \n\n College: %@\nRating = %.2f\n Raw Score = %d / 41\n Date: %@\n\nRatings:\n\n",col.name, rating, rawScore, datString];
 	for (int j = 0; j<self.keys.count;j++) {
 		// for tour guide and vibe
 		if ([self.keys objectAtIndex:j] == @"Tour Guide" || [self.keys objectAtIndex:j] == @"Vibe") {
@@ -375,6 +389,9 @@
 
 //sets up the email view
 -(void)showEmailView {
+	/*
+		expose email view
+	*/
 	MFMailComposeViewController *mailPicker  = [[MFMailComposeViewController alloc]init];
 	mailPicker.mailComposeDelegate = self;
 	[mailPicker setSubject:[NSString stringWithFormat:@"%@ Tour Information",col.name]];
@@ -385,8 +402,10 @@
 	[mailPicker release];
 }
 
-//sends email
 -(void) emailV {
+	/*
+		send function
+	*/
 	if ([MFMailComposeViewController canSendMail]) {
 		[self showEmailView];
 	}
@@ -394,6 +413,9 @@
 
 //composes mail or checks for error
 - (void)mailComposeController:(MFMailComposeViewController*)mailPicker didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error { 
+	/*
+		default mailview controller. Only a couple minor tweeks
+	*/
 	switch (result) {
 		case MFMailComposeResultCancelled:
 			break;
@@ -459,7 +481,7 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	// if user selects "Final Thoughts" cell, push new view
+	// if user selects "Final Thoughts" cell, push new viewa
 	if (indexPath.section == 1 && indexPath.row == 4 ) {
 	   tvc = [[TextDisplayViewController alloc] initWithCollege:col];
 	   [self.navigationController pushViewController:tvc animated:YES];

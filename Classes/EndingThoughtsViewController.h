@@ -30,11 +30,11 @@
 -(IBAction) hideKeyBoard:(UIButton *) hide;
 -(IBAction) goToThoughts:(UIButton *) thoughts;
 
-@property (nonatomic,retain) IBOutlet UISegmentedControl *vibe;
-@property (nonatomic,retain) IBOutlet UISegmentedControl *tourGuide, *town;
-@property (nonatomic,retain) IBOutlet UITextField * notes;
-@property (nonatomic,retain) College *col;
-@property (nonatomic,retain) IBOutlet UIButton *hide, *thoughts;
-@property (nonatomic,retain) NSDate * currTime;
+@property (nonatomic, retain) IBOutlet UISegmentedControl *vibe;
+@property (nonatomic, retain) IBOutlet UISegmentedControl *tourGuide, *town;
+@property (nonatomic, retain) IBOutlet UITextField * notes;
+@property (nonatomic, retain) College *col;
+@property (nonatomic, retain) IBOutlet UIButton *hide, *thoughts;
+@property (nonatomic, retain) NSDate * currTime;
 
 @end

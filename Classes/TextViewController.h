@@ -18,7 +18,7 @@
 -(id) initWithCollege:(College*) collegeModel;
 -(IBAction) updateText:(UITextView*) textv;
 
-@property(nonatomic,retain) College* col;
-@property(nonatomic,retain) IBOutlet UITextView *tv;
+@property(nonatomic, retain) College* col;
+@property(nonatomic, retain) IBOutlet UITextView *tv;
 
 @end

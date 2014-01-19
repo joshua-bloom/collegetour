@@ -13,7 +13,7 @@
 #import "AboutTableViewController.h"
 
 @implementation StartScreen
-@synthesize newTour, oldTours,settings,tv,context,about;
+@synthesize newTour, oldTours, settings, tv, context, about;
 
 -(id) initWithManagedObjectContext:(NSManagedObjectContext *) moc {
 	if (self = [super init]) {

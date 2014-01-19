@@ -19,8 +19,8 @@
 	NSManagedObjectContext *moc;
 }
 
-@property (nonatomic,retain) DLStarRatingControl *dorms,*food,*athletics,*campus,*social,*academics,*town;
-@property (nonatomic,retain) EndingThoughtsViewController *et;
+@property (nonatomic, retain) DLStarRatingControl *dorms,*food,*athletics,*campus,*social,*academics,*town;
+@property (nonatomic, retain) EndingThoughtsViewController *et;
 
 -(id) initWithCollege:(College*)collegeModel andContext:(NSManagedObjectContext*)context;
 -(void)newRating:(int)rating;

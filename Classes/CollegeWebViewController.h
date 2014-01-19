@@ -6,6 +6,7 @@
 //  Copyright 2011 College Visions. All rights reserved.
 //
 
+// tries to load webview
 #import <UIKit/UIKit.h>
 
 @interface CollegeWebViewController : UIViewController {
@@ -15,6 +16,9 @@
 	NSTimer *timer;
 	IBOutlet UIActivityIndicatorView *activity;
 }
+
+
+// declare methods 
 
 -(id) initWithURl:(NSString *)url;
 

@@ -14,7 +14,7 @@
 	UITextView *tv;
 }
 
-@property (nonatomic,retain) College *col;
-@property (nonatomic,retain) IBOutlet UITextView *tv;
+@property (nonatomic, retain) College *col;
+@property (nonatomic, retain) IBOutlet UITextView *tv;
 
 @end

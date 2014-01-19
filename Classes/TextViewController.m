@@ -10,7 +10,7 @@
 #import "College.h"
 
 @implementation TextViewController
-@synthesize col,tv;
+@synthesize col, tv;
 
 -(id) initWithCollege:(College*) collegeModel {
 	if (self =[self initWithNibName:nil bundle:nil]){

@@ -25,11 +25,11 @@
 -(IBAction) switchToSettings:(UIButton*) settings;
 -(IBAction) switchToAbout:(UIButton*) about;
 
-@property (nonatomic,retain) NSManagedObjectContext* context;
-@property (nonatomic,retain) NewTourViewController* tv;
-@property (nonatomic,retain) IBOutlet UIButton* newTour;
-@property (nonatomic,retain) IBOutlet UIButton* oldTours;
-@property (nonatomic,retain) IBOutlet UIButton* settings;
-@property (nonatomic,retain) IBOutlet UIButton* about;
+@property (nonatomic, retain) NSManagedObjectContext* context;
+@property (nonatomic, retain) NewTourViewController* tv;
+@property (nonatomic, retain) IBOutlet UIButton* newTour;
+@property (nonatomic, retain) IBOutlet UIButton* oldTours;
+@property (nonatomic, retain) IBOutlet UIButton* settings;
+@property (nonatomic, retain) IBOutlet UIButton* about;
 
 @end

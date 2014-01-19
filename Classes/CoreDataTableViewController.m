@@ -9,7 +9,7 @@
 @implementation CoreDataTableViewController
 
 @synthesize fetchedResultsController;
-@synthesize titleKey, subtitleKey, searchKey,deleteCheck;
+@synthesize titleKey, subtitleKey, searchKey, deleteCheck;
 
 - (void)createSearchBar
 {

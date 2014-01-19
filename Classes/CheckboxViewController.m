@@ -2,6 +2,7 @@
 
 @implementation CheckboxViewController
 
+// checkbox action implementation
 - (IBAction)checkboxButton:(id)sender{
 	if (checkboxSelected == 0){
 		[checkboxButton setSelected:YES];
