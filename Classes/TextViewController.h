@@ -10,6 +10,7 @@
 
 @class College;
 
+// manages interaction between current tour and TextDisplayVC
 @interface TextViewController : UIViewController <UITextViewDelegate> {
 	College * col;
 	UITextView *tv;

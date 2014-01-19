@@ -25,6 +25,9 @@
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+	/*
+		create text view
+	*/
 	if (range.length==0) {
         if ([text isEqualToString:@"\n"]) {
 			[textView resignFirstResponder];
