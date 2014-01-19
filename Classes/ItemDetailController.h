@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+// view controller for camera functionality
 @interface ItemDetailController : UIViewController <UINavigationControllerDelegate , UIImagePickerControllerDelegate>{
 	IBOutlet UIImageView *imageView;
 	UIButton *cameraButton;

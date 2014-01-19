@@ -19,6 +19,9 @@
 }
 
 -(IBAction)takePicture {
+	/*
+		capture picture
+	*/
 	UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
 	if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
 		[imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
@@ -45,6 +48,9 @@
 }
 
 - (void)saveImage:(UIImage *)image withName:(NSString *)name {
+	/*
+		logic to save images on iPhone
+	*/
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	NSString *documentsDirectory = [paths objectAtIndex:0];
     NSData *data = UIImageJPEGRepresentation(image, 1.0);
@@ -55,6 +61,9 @@
 }
 
 -(UIImage *)loadImage:(NSString *)name {
+	/*
+		load image from path on iPhone
+	*/
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *fullPath = [documentsDirectory stringByAppendingPathComponent:name];    
