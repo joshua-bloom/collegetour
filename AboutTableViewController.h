@@ -6,16 +6,17 @@
 //  Copyright 2011 College Visions. All rights reserved.
 //
 
+// A TVC to display the information about College Tours
 #import <UIKit/UIKit.h>
 
 
 @interface AboutTableViewController : UITableViewController {
-	NSArray *info;
+	NSArray *info; // Twitter, email etc
 	NSTimer *timer;
-	IBOutlet UIActivityIndicatorView *activity;
+	IBOutlet UIActivityIndicatorView *activity; 
 }
 
-@property(nonatomic,retain) NSArray * info;
+@property(nonatomic, retain) NSArray * info;
 
 
 @end

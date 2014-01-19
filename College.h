@@ -9,11 +9,13 @@
 #import <CoreData/CoreData.h>
 
 @interface College :  NSManagedObject  {
+	// declare interface
 	NSMutableArray *categoryArray;
 	NSMutableDictionary *dic;
 	NSMutableArray *settings;
 }
 
+// local variables
 -(void) makeCollege;
 -(void)buildCategoryArray;
 -(float)calculateCollegeRating;
@@ -21,9 +23,8 @@
 -(NSString*) fullDescription;
 -(NSDate*)getDate;
 -(NSString*) getWeather;
-//-(void) simpleRating;
-//-(NSString*) titleKey;
 
+// create properties
 @property (nonatomic, retain) NSMutableArray *settings;
 @property (nonatomic, retain) NSMutableDictionary *dic;
 @property (nonatomic, readonly) NSString* titleKey;

@@ -15,6 +15,7 @@
 
 -(id) init {
 	if (self =[self initWithNibName:nil bundle:nil]) {
+		// add about information
 		info = [[NSArray alloc] initWithObjects:@"About Us",@"Email",@"Facebook",@"Twitter",@"Website",@"Icons",@"Promote",@"Acknowledgements",@"FAQ",nil];
 	}
 	return self;		
@@ -148,13 +149,8 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
     /*
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    [detailViewController release];
+    	initializes messages for each cell  and customizes about view
     */
 
 	NSString *aMsg = @"Developed by Sam Clark and Josh Bloom, Juniors @ Swarthmore College";

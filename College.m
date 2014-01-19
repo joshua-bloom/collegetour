@@ -20,6 +20,7 @@
 }
 
 -(NSMutableArray *) settings {
+	// declare settings array for preferences
 	NSUserDefaults *currentDefaults = [NSUserDefaults standardUserDefaults];
 	NSData *dataRepresentingSavedArray = [currentDefaults objectForKey:@"savedArray"];
 	if (dataRepresentingSavedArray != nil) {
@@ -38,18 +39,24 @@
 }
 
 -(void) makeCollege {
+	/*
+		Function to create a new college object
+	*/
 	College * college;
 	college = [NSEntityDescription insertNewObjectForEntityForName:@"College"
 											inManagedObjectContext:self.managedObjectContext];
 	college.finalThoughts = @" ";
-	//self.dat = [NSDate date];
 	[self populateDictionary];
+	// create a visited date
 	NSDate *today = [[NSDate alloc]init];
 	college.dat = today; 
 } 
 
 -(void) buildCategoryArray {
-	categoryArray = [[NSMutableArray alloc] initWithObjects: self.weather, self.dorms,self.food, self.town, self.tourGuide,self.campus,self.social,self.academics,self.athletics,self.vibe,nil];
+	/*
+		Creates an array of rating categories
+	*/
+	categoryArray = [[NSMutableArray alloc] initWithObjects: self.weather, self.dorms, self.food, self.town, self.tourGuide, self.campus, self.social, self.academics, self.athletics, self.vibe, nil];
 }
 
 -(NSString*)titleKey {
@@ -57,12 +64,16 @@
 }
 
 -(NSDate*) getDate {
+	// helper function to get date
 	NSDate *today = [[NSDate alloc] init];
 	self.dat = today;
 	return self.dat;
 }
 
 -(NSString*) getWeather {
+	/* 
+		Converts weather from button idx to value
+	*/
 	NSString *weather = [NSString stringWithFormat:@""];
 	if ([self.weather intValue] == 0) {
 		weather = [weather stringByAppendingString:[NSString stringWithFormat:@"Miserable"]];
@@ -77,6 +88,9 @@
 }
 
 -(void) populateDictionary {
+	/*
+		helper method to fill class into dictoinarry
+	*/
 	[self.dic setObject:self.weather forKey:@"Weather"];
 	[self.dic setObject:self.dorms forKey:@"Dorms"];;
 	[self.dic setObject:self.food forKey:@"Food"];
@@ -110,7 +124,8 @@
 */
 
 -(NSString*)fullDescription {
-	return [NSString stringWithFormat:@"Name = %@, Weather = %@, Dorms = %@, Food = %@, Tour Guide = %@, Campus = %@, Social = %@, Town = %@, Academics = %@, Athletics = %@, Vibe = %@, FinalThoughts = %@", self.name, self.weather, self.dorms,self.food, self.tourGuide,self.campus,self.social,self.town,self.academics,self.athletics,self.vibe,self.finalThoughts];
+	// helper to build string
+	return [NSString stringWithFormat:@"Name = %@, Weather = %@, Dorms = %@, Food = %@, Tour Guide = %@, Campus = %@, Social = %@, Town = %@, Academics = %@, Athletics = %@, Vibe = %@, FinalThoughts = %@", self.name, self.weather, self.dorms, self.food, self.tourGuide, self.campus, self.social, self.town, self.academics, self.athletics, self.vibe, self.finalThoughts];
 }
 
 -(NSString*)sectionTitle {
@@ -118,6 +133,9 @@
 }
 
 -(float) tourGuideMultiplier:(NSNumber*) tourGuide {
+	/* 
+		Scale for tour guides
+	*/
 	if (tourGuide.intValue == 3) {		// Great
 		return 0.97;
 	}
@@ -133,6 +151,9 @@
 }
 
 -(float) convertVibeRating: (NSNumber *) vibeRating {
+	/*
+		scale for vibe rating
+	*/
 	if (vibeRating.intValue == 3) {			// Good overall impression
 		return 100.00;
 	}
@@ -149,6 +170,9 @@
 }
 
 -(float) convertStarRatings: (NSNumber *) starRating {
+	/* 
+		conversion from stars to scour
+	*/
 	if (starRating.intValue == 5) {			// 5 star rating
 		return 100.00;
 	}
@@ -168,6 +192,9 @@
 }
 
 -(float) campusWeatherMultiplier {
+	/*
+		weather based scale
+	*/
 	float campusStarRating = [self convertStarRatings:self.campus];  // this will give you campus' converted star rating
 	
 	if (self.weather.intValue == 2) {			// nice weather, their ratings need to be lowered by the multiplier
@@ -211,6 +238,9 @@
 }
 
 -(float) socialWeatherMultiplier {
+	/*
+		combination of social and weather score
+	*/
 	float socialStarRating = [self convertStarRatings:self.social]; // this will give you social's converted star rating
 	
 	if (self.weather.intValue == 2) {			// nice weather, their ratings need to be lowered by the multiplier
@@ -254,6 +284,9 @@
 }
 
 -(float) vibeWeatherMultiplier {
+	/* 
+		combination of weather and vibe score
+	*/
 	float vibeStarRating = [self convertVibeRating:self.vibe]; // this will give you vibe's converted star rating
 	
 	if (self.weather.intValue == 2) {			// nice weather, their ratings need to be lowered by the multiplier
@@ -291,6 +324,9 @@
 }
 
 -(float) calculateCollegeRating {
+	/* 
+		combines all logic to evaluate the rating for a college and returns that value
+	*/
 	id key;
 	int divisor = 0;
 	float total = 0.00;
@@ -391,6 +427,7 @@
 	return postTourGuideRating;	
 }
 
+// match properies
 @dynamic social;
 @dynamic rating;
 @dynamic finalThoughts;
