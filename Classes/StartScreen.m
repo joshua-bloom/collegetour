@@ -31,11 +31,13 @@
 }
 
 -(IBAction) switchToNewTour:(UIButton*) newTour {
+	// start new tour
 	[self.navigationController pushViewController:self.tv animated:YES];
 	self.tv = nil;
 }
 
 -(IBAction) switchToAbout: (UIButton*) about {
+	// show about
 	AboutTableViewController * atvc = [[AboutTableViewController alloc] init];
 	atvc.title = @"About";
 	[self.navigationController pushViewController:atvc animated:YES];
@@ -43,6 +45,7 @@
 }
 
 -(IBAction) switchToSettings:(UIButton*)settings {
+	// show settings
 	SettingsTableViewController	*stvc = [[SettingsTableViewController alloc] init];
 	stvc.title = @"Preferences";
 	[self.navigationController pushViewController:stvc animated:YES];
@@ -50,6 +53,7 @@
 }
 
 -(IBAction) switchToOldTours: (UIButton *) oldTours {
+	// show past tours
 	VisitedTableViewController* vtvc = [[VisitedTableViewController alloc] initInManagedObjectContext:context];
 	vtvc.title = @"Visited Colleges";
 	NSLog(@"created vtvc");

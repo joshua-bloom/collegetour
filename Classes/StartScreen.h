@@ -10,7 +10,9 @@
 
 @class NewTourViewController;
 
+// first view seen when app loads
 @interface StartScreen : UIViewController {
+	// add main menue buttons
 	UIButton *newTour;
 	UIButton *oldTours;
 	UIButton *settings;
@@ -19,6 +21,7 @@
 	NSManagedObjectContext* context;
 }
 
+// declare methods
 -(id) initWithManagedObjectContext:(NSManagedObjectContext *) moc ;
 -(IBAction) switchToNewTour:(UIButton*) newTour;
 -(IBAction) switchToOldTours:(UIButton*) oldTours;
