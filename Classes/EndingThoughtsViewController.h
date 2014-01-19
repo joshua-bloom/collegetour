@@ -10,6 +10,8 @@
 
 @class College;
 
+// a view controller where a user can journal their final impressions of a college visit
+
 @interface EndingThoughtsViewController : UIViewController {
 	UISegmentedControl *vibe;
 	UISegmentedControl *tourGuide;
