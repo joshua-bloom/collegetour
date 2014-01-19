@@ -5,6 +5,7 @@
 //  Created by David Linsin on 1/4/11.
 //
 
+// acknowledged in about
 #import "DLStarView.h"
 
 @implementation DLStarView

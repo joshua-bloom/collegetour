@@ -5,6 +5,7 @@
 //  Created by David Linsin on 1/4/11.
 //
 
+// acknowledged in About
 #import "DLStarRatingControl.h"
 #import "DLStarView.h"
 #import "UIView+Subviews.h"

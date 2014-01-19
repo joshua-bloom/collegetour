@@ -4,6 +4,10 @@
 //  Created for Stanford CS193p Spring 2010
 //
 
+/*
+	Code from stanford cs193p class
+*/
+
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
