@@ -47,6 +47,7 @@
 
 	//manually draws all the star views into the page (MIGHT NEED TO RELEASE THESE IN DEALLOC)
 -(void)createStarViews{
+	// make a row for each category
 	dorms = [[DLStarRatingControl alloc] initWithFrame:CGRectMake(110, 10, 200, 50) andStars:5];
 	dorms.delegate = self;
 	food = [[DLStarRatingControl alloc] initWithFrame:CGRectMake(110, 70, 200, 50) andStars:5];
